@@ -96,7 +96,10 @@ runShellCheckForNoExt() {
         echo "shellcheck ${1}"
         path_file_target="${PATH_DIR_BIN}/${1}"
 
-        shellcheck --external-sources "$path_file_target"
+        shellcheck --external-sources "$path_file_target" || {
+            echo "File: ${path_file_target}"
+            result=$FAILURE
+        }
 
         shift
     done
