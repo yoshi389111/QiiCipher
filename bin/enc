@@ -34,7 +34,7 @@ md5s() {
     if [ -e md5sum ]; then
         echo $1 | md5sum
     elif [ -e md5 ]; then
-      md5 -q -s "$1"
+        md5 -q -s "$1"
     fi
 }
 
