@@ -65,6 +65,7 @@ runShfmtForNoExt() {
     set -- $LIST_SCRIPT_NO_EXT
 
     while [ ! "$1" ]; do
+        echo "shfmt ${1}"
         path_file_target="${PATH_DIR_BIN}/${1}"
 
         shfmt -d "$path_file_target" || {
@@ -92,6 +93,7 @@ runShellCheckForNoExt() {
     # shellcheck disable=SC2086
     set -- $LIST_SCRIPT_NO_EXT
     while [ ! "${1:+none}" ]; do
+        echo "shellcheck ${1}"
         path_file_target="${PATH_DIR_BIN}/${1}"
 
         shellcheck --external-sources "$path_file_target"
