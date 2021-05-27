@@ -90,6 +90,7 @@ runShellCheckShExt() {
 }
 
 runShellCheckForNoExt() {
+    result=$SUCCESS
     # shellcheck disable=SC2086
     set -- $LIST_SCRIPT_NO_EXT
     while [ -n "${1:+none}" ]; do
@@ -103,6 +104,7 @@ runShellCheckForNoExt() {
 
         shift
     done
+    return $result
 }
 
 # -----------------------------------------------------------------------------
