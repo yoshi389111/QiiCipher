@@ -64,7 +64,7 @@ runShfmtForNoExt() {
     # shellcheck disable=SC2086
     set -- $LIST_SCRIPT_NO_EXT
 
-    while [ ! "$1" ]; do
+    while [ -n "$1" ]; do
         echo "shfmt ${1}"
         path_file_target="${PATH_DIR_BIN}/${1}"
 
@@ -92,7 +92,7 @@ runShellCheckShExt() {
 runShellCheckForNoExt() {
     # shellcheck disable=SC2086
     set -- $LIST_SCRIPT_NO_EXT
-    while [ ! "${1:+none}" ]; do
+    while [ -n "${1:+none}" ]; do
         echo "shellcheck ${1}"
         path_file_target="${PATH_DIR_BIN}/${1}"
 
